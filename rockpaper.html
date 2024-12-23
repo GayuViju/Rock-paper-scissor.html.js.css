@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Rock Paper Scissor</title>
+    <style>
+      button
+      {
+        background-color: black;
+        color:white;
+        padding:4px;
+        margin:10px;
+        border-width:2px;
+      }
+
+    </style>
+</head>
+<body>
+  <p><u>Rock Paper Scissors</u></p>
+  <button onclick="
+  let compmove=' ';
+  compmove=findmove();
+  if(compmove=='rock')
+    alert(`It's Tie\n Computer choose rock\n You choose Rock`);
+  else if(compmove=='scissor')
+    alert(`You Win \n Computer choose scissor \n You choose rock `);
+  else
+  alert(`You loose \n Computer choose Paper \n You choose rock `);
+  ">Rock</button>
+  <button onclick="
+  compmove=findmove();
+  if(compmove=='rock')
+    alert(`You win \n Computer choose rock \n You choose Paper`);
+  else if(compmove=='scissor')
+    alert(`You loose \n Computer choose scissor \n You choose paper`);
+  else
+    alert(`It's a Tie \n Computer choose Paper \n You choose paper `);
+  ">Paper</button>
+  <button onclick="
+  compmove=findmove();
+  if(compmove=='rock')
+    alert(`You loose \n Computer choose rock \n You choose Scissor`);
+  else if(compmove=='scissor')
+    alert(`It's a Tie \n Computer choose scissor \n You choose Scissor`);
+  else
+    alert(`You win \n Computer choose Paper \n You choose Scissor`);
+  ">Scissors</button>
+</body>
+<script>
+  function findmove()
+  {
+    let cmp=Math.random();
+    if(cmp>0 && cmp<1/3)
+       return 'rock';
+    else if(cmp=1/3 && cmp>1/3)
+        return 'paper';
+    else
+      return 'scissor';
+  }
+</script>
+</html>
